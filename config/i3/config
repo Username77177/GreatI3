@@ -1,0 +1,131 @@
+### Tweaks ###
+# Set main key (Win)
+set $mod Mod4
+
+# Press MOD key and click on mouse to move your window
+floating_modifier $mod
+
+# Fonts
+font pango: JetBrains Mono 10
+
+# xwinwrap
+exec xwinwrap -g 1920x1080 -ov -ni -s -nf -- gifview -w WID ~/.config/i3/gif.gif -a
+
+
+
+### Main settings ###
+# Workspace names (and variables)
+set $workspace1 "Terminal"
+set $workspace2 "Editor"
+set $workspace3 "Web"
+set $workspace4 "Other"
+
+## Rules ##
+assign [class="konsole|kitty|urxvt|gnome-terminal|alacritty"] $workspace1
+assign [class="Emacs|Gvim|vim|nvim|Code|marktext|Boostnote"] $workspace2
+assign [class="google-chrome|firefox|TelegramDesktop|Chromium"] $workspace3
+assign [class="Dolphin|vifm|ranger|zathura|draw.io"] $workspace4
+
+# Make all windows floating
+for_window [class=".*"] floating enable
+
+## Keyboard Settings ##
+# Apps
+bindsym $mod+Return exec konsole
+bindsym $mod+Mod1+g exec google-chrome-stable
+bindsym $mod+Mod1+c exec code
+bindsym $mod+Mod1+v exec dolphin
+
+# System / Volume
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+
+# System / Brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+
+# Moving from one window to another
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Choose one of your workspaces
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+
+# Move window to the workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+
+## Floating manipulation ##
+# Make window floating
+bindsym $mod+f floating toggle
+# Change focus
+bindsym $mod+Shift+f focus mode_toggle
+
+# Move windows
+bindsym $mod+Shift+h move left 20px
+bindsym $mod+Shift+j move down 20px
+bindsym $mod+Shift+k move up 20px
+bindsym $mod+Shift+l move right 20px
+
+# Resizing Windows
+bindsym $mod+Ctrl+l resize shrink width 10 px or 10 ppt
+bindsym $mod+Ctrl+k resize grow height 10 px or 10 ppt
+bindsym $mod+Ctrl+j resize shrink height 10 px or 10 ppt
+bindsym $mod+Ctrl+h resize grow width 10 px or 10 ppt
+
+# Make window fullscreen
+bindcode 95 fullscreen toggle
+
+# Reload Configuration
+bindsym $mod+p reload
+
+# Kill a window
+bindsym $mod+x exec xkill
+
+
+
+### Autostart ###
+# Compositor
+exec_always --no-startup-id "killall -q picom; picom --config $HOME/.config/picom.conf"
+# Language
+exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
+# Albert
+exec albert
+# Konsole
+exec konsole
+# Dropbox
+exec --no-startup-id dropbox &
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+
+
+### i3-gaps ###
+# Borders for windows
+for_window [class=".*"] border pixel 5
+
+# Gaps for i3bar
+for_window [class="i3bar"] gaps outer current set 10
+
+# Gaps
+gaps inner 10
+gaps outer 4
+
+
+### Topbar and color theme ###
+# Color theme of borders
+client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused_inactive     #2f343f #kf343f #d8dee8 #2f343f #2f343f
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background           #2f343f
+
