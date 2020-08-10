@@ -1,0 +1,98 @@
+/*
+ * Theme by Us3rn4me
+ */
+
+
+* {
+  black:      #292F36;
+  black-alt:  #3D4751;
+  red:        #FF6B6B;
+  red-alt:    #E72B57;
+  green:      #88FC9F;
+  yellow:     #FFE66D;
+  orange:     #D78b20;
+  blue:       #4ECDC4;
+  mangenta:   #E6BCCD;
+  cyan:       #80DBD5;
+  emphasis:   #FFC857;
+  white:      #FFFCEB;
+  white-alt:  #EDEBD7;
+
+  spacing: 0;
+  background-color: @black;
+
+  font: "Iosevka 14";
+  text-color: @white;
+}
+
+window {
+  transparency: "real";
+  fullscreen: false;
+  background-color: @bg;
+  width: 100%;
+}
+
+// Background
+mainbox {
+  padding: 30% 30%;
+  background-color: @black;
+}
+
+inputbar {
+  margin: 10px 5px 20px 5px;
+  children: [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+prompt {
+  text-color: @white-alt;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: "(╯°□°）╯︵┻━┻";
+  text-color: @white;
+}
+
+entry {
+  margin: 0 10px;
+  text-color: @red;
+}
+
+listview {
+  spacing: 7px;
+  dynamic: true;
+  scrollbar: true;
+}
+
+element {
+  padding: 5px;
+  text-color: @white;
+  border-radius: 15px;
+}
+
+element selected {
+  background-color: @red-alt;
+  text-color: @white-alt;
+}
+
+element urgent, element selected urgent {
+  text-color: @red;
+}
+
+element active, element selected active {
+  text-color: @purple;
+}
+
+message {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+  border: 1px;
+  border-color: @cyan;
+}
+
+button selected {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: @emphasis;
+}
