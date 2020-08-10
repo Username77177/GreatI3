@@ -17,16 +17,17 @@ GreatI3 - проект, который я сделал просто потому
 sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi dolphin moc okular feh vim code picom kitty ranger git
 git clone https://github.com/us3rn4me-profile/GreatI3.git
 cd GreatI3
-mkdir -p ~/.local/share/fonts/ && \
-cp fonts/* ~/.local/share/fonts/ && \
+mkdir -p $HOME/.local/share/fonts/ && \
+cp fonts/* $HOME/.local/share/fonts/ && \
 fc-cache -vf
-cp ./config/* ~/.config/ && sudo cp ./40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
+cp ./config/* $HOME/.config/ -r && sudo cp ./40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
+cp ./scripts $HOME/.scripts -r
 
 # Build Polybar
 
 # Build XWinWrap
 sudo pacman -Sy --noconfirm xorg-dev build-essential libx11-dev x11proto-xext-dev libxrender-dev libxext-dev gifsicle
-git clone https://github.com/ujjwal96/xwinwrap.git ~/gitinstalled/xwinwrap
+git clone https://github.com/ujjwal96/xwinwrap.git $HOME/gitinstalled/xwinwrap
 cd xwinwrap
 make
 sudo make install
@@ -35,6 +36,9 @@ cd ../
 rm -rf xwinwrap
 ```
 
+## Потребление RAM
+Я старался сделать данную сборку наиболее минималистичной, так что добавлял только самые нужные и важные программы в автозапуск. Мне удалось добится высокой энергоэффективности и малого потребления RAM.
+![Ram Usage](assets/ram_usage.png)
 ## Горячие клавиши
 Я пытаюсь сделать GreatI3 удобным для всех, поэтому горячие клавиши работают по определённым правилам
 ![Hotkeys Diagram](assets/Hotkeys.png)

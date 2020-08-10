@@ -45,7 +45,7 @@ for_window [class=".*"] focus
 
 ## Keyboard Settings ##
 # Apps
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec kitty
 bindsym $mod+Mod1+g exec google-chrome-stable
 bindsym $mod+Mod1+c exec code
 bindsym $mod+Mod1+v exec dolphin
@@ -122,7 +122,7 @@ exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_
 # Albert
 exec albert
 # Konsole
-exec konsole
+exec kitty
 # Dropbox
 exec --no-startup-id dropbox &
 # Polybar

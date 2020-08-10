@@ -10,11 +10,8 @@
   red-alt:    #E72B57;
   green:      #88FC9F;
   yellow:     #FFE66D;
-  orange:     #D78b20;
   blue:       #4ECDC4;
-  mangenta:   #E6BCCD;
-  cyan:       #80DBD5;
-  emphasis:   #FFC857;
+  yellow-alt: #FFC857;
   white:      #FFFCEB;
   white-alt:  #EDEBD7;
 
@@ -28,7 +25,7 @@
 window {
   transparency: "real";
   fullscreen: false;
-  background-color: @bg;
+  background-color: @black;
   width: 100%;
 }
 
@@ -80,13 +77,13 @@ element urgent, element selected urgent {
 }
 
 element active, element selected active {
-  text-color: @purple;
+  text-color: @yellow-alt;
 }
 
 message {
   padding: 5px;
   border-radius: 3px;
-  background-color: @emphasis;
+  background-color: @yellow-alt;
   border: 1px;
   border-color: @cyan;
 }
@@ -94,5 +91,5 @@ message {
 button selected {
   padding: 5px;
   border-radius: 3px;
-  background-color: @emphasis;
+  background-color: @yellow-alt;
 }
