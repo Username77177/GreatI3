@@ -13,6 +13,8 @@ GreatI3 - проект, который я сделал просто потому
 * [Treefall Gif](https://github.com/loki7990/Tranquility/blob/master/.config/bspwm/treefall.gif)
 
 *Цветовая палитра*:
+
+
 ![Color Palette](assets/GreatI3_Colorscheme.png)
 
 # Установка
@@ -47,8 +49,12 @@ rm -rf xwinwrap
 Я пытаюсь сделать GreatI3 удобным для всех, поэтому горячие клавиши работают по определённым правилам
 ![Hotkeys Diagram](assets/Hotkeys.png)
 
+# Элементы интерфейса
 ## Топбар
 Так как в i3 по умолчанию топбар слабенький, то я воспользовался аналогом на Python - [Polybar](https://github.com/polybar/polybar). Его конфигурация лежит в `$HOME/.config/polybar/{config,modules}`
 ![Polybar](assets/Polybar.png)
 ![Polybar Screenshot](assets/Polybar_screen.png)
 
+## Уведомления
+Стандартные уведомления хороши, а уведомления от Dunst ещё лучше. Я сделал прототип уведомлений и осуществил его во плоти.
+![Dunst Notification](assets/Dunst.png)

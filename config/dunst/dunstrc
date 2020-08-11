@@ -1,7 +1,7 @@
 [global]
 font = Iosevka 14
 allow_markup = yes
-format = "<b>'  '%s</b>\n%b"
+format = "<b>  %s</b>\n    %b"
 sort = yes
 alignment = left
 bounce_freq = 0
@@ -16,7 +16,7 @@ follow = mouse
 line_height = 1.5
 horizontal_padding = 2
 class = Dunst
-corner_radius = 15
+corner_radius = 0
 
 padding = 12
 separator_color = auto
