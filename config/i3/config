@@ -52,7 +52,7 @@ bindsym $mod+Mod1+v exec dolphin
 bindsym Print exec spectacle
 
 # Select window, open new app
-bindsym Mod1+Tab exec "rofi -modi window,drun,ssh,combi -theme ~/.config/rofi/GreatI3.rasi -show combi"
+bindsym Mod1+Tab exec "rofi -modi window,drun,ssh,combi -show-icons -sort -theme ~/.config/rofi/GreatI3.rasi -show combi"
 
 # System / Volume
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
@@ -119,9 +119,9 @@ exec_always --no-startup-id wal -i $HOME/.config/i3/gif-0.jpg
 exec_always --no-startup-id "killall -q picom; picom --config $HOME/.config/picom.conf"
 # Language
 exec --no-startup-id setxkbmap -model pc105 -layout us,ru -option grp:win_space_toggle
-# Albert
-exec albert
-# Konsole
+# Dunst
+exec --no-startup-id dunst
+# Kitty
 exec kitty
 # Dropbox
 exec --no-startup-id dropbox &

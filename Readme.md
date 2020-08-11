@@ -8,8 +8,12 @@ GreatI3 - проект, который я сделал просто потому
 *Шрифты*:
 * [Iosevka](https://github.com/be5invis/Iosevka)
 * [FontAwesome](https://fontawesome.com/)
+
 *Гиф*: 
 * [Treefall Gif](https://github.com/loki7990/Tranquility/blob/master/.config/bspwm/treefall.gif)
+
+*Цветовая палитра*:
+![Color Palette](assets/GreatI3 Colorscheme.png)
 
 # Установка
 Для того, чтобы установить GreatI3 на Arch Linux, вам нужно выполнить следующий скрипт:
