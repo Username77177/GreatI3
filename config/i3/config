@@ -31,10 +31,10 @@ set $workspace3 "Web"
 set $workspace4 "Other"
 
 ## Rules ##
+assign [class="*|Dolphin|vifm|ranger|zathura|draw.io"] $workspace4
 assign [class="konsole|kitty|urxvt|gnome-terminal|alacritty"] $workspace1
 assign [class="Emacs|Gvim|vim|nvim|Code|marktext|Boostnote"] $workspace2
 assign [class="Google-chrome|firefox|TelegramDesktop|Chromium"] $workspace3
-assign [class="Dolphin|vifm|ranger|zathura|draw.io"] $workspace4
 
 # Make all windows floating
 # (1920 - 10)/2 and (1080 - 10)/2
@@ -46,6 +46,7 @@ for_window [class=".*"] focus
 ## Keyboard Settings ##
 # Apps
 bindsym $mod+Return exec kitty
+bindsum $mod+Mod1+r exec "kitty ranger"
 bindsym $mod+Mod1+g exec google-chrome-stable
 bindsym $mod+Mod1+c exec code
 bindsym $mod+Mod1+v exec dolphin
@@ -53,6 +54,9 @@ bindsym Print exec spectacle
 
 # Select window, open new app
 bindsym Mod1+Tab exec "rofi -modi window,drun,ssh,combi -show-icons -sort -theme ~/.config/rofi/GreatI3.rasi -show combi"
+
+# Rofi drun mode
+bindsym $mod+d exec "rofi -modi drun -show drun -show-icons -sort -theme ~/.config/rofi/GreatI3.rasi"
 
 # System / Volume
 bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
@@ -106,7 +110,7 @@ bindcode 95 fullscreen toggle
 bindsym $mod+p reload
 
 # Kill a window
-bindsym $mod+x exec xkill
+bindsym $mod+x exec xdotool getwindowfocus windowkill
 
 
 
