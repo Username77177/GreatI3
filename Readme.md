@@ -20,14 +20,14 @@ GreatI3 - проект, который я сделал просто потому
 # Установка
 Для того, чтобы установить GreatI3 на Arch Linux, вам нужно выполнить следующий скрипт:
 ```bash
-sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi dolphin moc okular feh vim code picom kitty ranger git xdotool
+sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi okular feh vim code picom kitty ranger git xdotool xautolock i3lock-color scrot imagemagick
 git clone https://github.com/us3rn4me-profile/GreatI3.git
 cd GreatI3
 mkdir -p $HOME/.local/share/fonts/ && \
 cp fonts/* $HOME/.local/share/fonts/ && \
 fc-cache -vf
 cp ./config/* $HOME/.config/ -r && sudo cp ./40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
-cp ./scripts $HOME/.scripts -r
+cp ./scripts/* $HOME/.config/i3/ -r
 
 # Build Polybar
 
@@ -41,6 +41,30 @@ make clean
 cd ../
 rm -rf xwinwrap
 ```
+| Пакет | Для чего нужен |
+---------|-----------------
+| xwinwrap | Нужен для установки файлов с расширением .gif в виде анимированных обоев |
+| polybar | Нужен для того, чтобы в менеджере окон отображался топбар |
+| i3 | Сам оконный менеджер |
+| i3-gaps | Расширение для оконного менеджера |
+| base-devel | Компоненты необходимые для установки polybar |
+| rofi | Программа для запуска приложений |
+| okular | Программа для просмотра документов |
+| zathura | Программа для просмотра документов (поддерживает не так много расширений, однако более минималистичная) |
+| feh | Программа для просмотра картинок, а также для установки фоновых изображений |
+| vim | Основной редактор |
+| code | Дополнительный редактор |
+| picom | Композитор (программа которая создает тени, прозрачность, блюрит фон) |
+| kitty | Основной терминал |
+| urxvt | Дополнительный терминал |
+| ranger | Файловый менеджер |
+| git | Система контроля версий |
+| xdotool | Утилита, которая поможет при разработке скриптов и взаимодействии с окнами |
+| xautolock | Утилита, которая блокирует компьютер при бездействии и запускает i3-lock |
+| i3lock-color | Улучшенная версия i3lock. Программа нужна для блокировки компьютера и ввода пароля |
+| scrot | Минималистиченое приложение для создания скриншотов |
+| imagemagick | Программа, которая поможет при взаимодействии с картинками (блюрит их заранее, конвертирует, меняет разрешение) |
+
 
 ## Потребление RAM
 Я старался сделать данную сборку наиболее минималистичной, так что добавлял только самые нужные и важные программы в автозапуск. Мне удалось добится высокой энергоэффективности и малого потребления RAM.
@@ -77,3 +101,11 @@ rm -rf xwinwrap
 ![Rofi Switch Windows](assets/rofi.png)
 
 ![Rofi drun](assets/rofi_drun.png)
+
+## Фоновая картинка
+Для того, чтобы поставить фоновую картинку вам нужно перенести любую картинку в `$HOME/.config/i3/wallpapers/`.
+
+### Lockscreen
+Локскрин включается в течении 3 секунд, если навести мышь в левый верхний угол. Также он включится, если вы не будете взаимодействовать с ПК в течении 10 минут.
+
+![Background](assets/Background.png)

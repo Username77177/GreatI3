@@ -15,7 +15,7 @@ popup_during_fullscreen smart
 font pango: JetBrains Mono 10
 
 # xwinwrap
-exec xwinwrap -g 1920x1080 -ov -ni -s -nf -- gifview -w WID ~/.config/i3/gif.gif -a
+# exec xwinwrap -g 1920x1080 -ov -ni -s -nf -- gifview -w WID ~/.config/i3/gif.gif -a
 
 # Maximum width for floating windows
 floating_minimum_size 400 x 350
@@ -43,6 +43,9 @@ for_window [class=".*"] resize set 955 535
 for_window [class=".*"] focus
 # for_window [class="urxvt|kitty|konsole"] workspace_layout stacking
 
+# Layout Preferences
+
+
 ## Keyboard Settings ##
 # Apps
 bindsym $mod+Return exec kitty
@@ -59,9 +62,10 @@ bindsym Mod1+Tab exec "rofi -modi window,drun,ssh,combi -show-icons -sort -theme
 bindsym $mod+d exec "rofi -modi drun -show drun -show-icons -sort -theme ~/.config/rofi/GreatI3.rasi"
 
 # System / Volume
-bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
-bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioMute "exec amixer -D pulse sset Master toggle && notify-send \"Volume\" \"Sound is (un)muted\" --urgency low"
+bindsym XF86AudioRaiseVolume "exec amixer -D pulse sset Master 5%+ && notify-send \"Volume\" \"Volume added +5%\n    Volume level is now $(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=\"\"}{ print $3 }')\" --urgency low"
+bindsym XF86AudioLowerVolume "exec amixer -D pulse sset Master 5%- && notify-send \"Volume\" \"Volume added -5%\n    Volume level is now $(amixer -D pulse get Master | awk -F 'Left:|[][]' 'BEGIN {RS=\"\"}{ print $3 }')\" --urgency low"
+
 
 # System / Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
@@ -112,9 +116,14 @@ bindsym $mod+p reload
 # Kill a window
 bindsym $mod+x exec xdotool getwindowfocus windowkill
 
+# Floating vector
+bindsym $mod+v split t
+
 
 
 ### Autostart ###
+# Lockscreen after 10min delay
+exec --no-startup-id "$HOME/.config/i3/lockscreen"
 # Convert background gif to jpg
 exec --no-startup-id convert -verbose $HOME/.config/i3/{gif.gif,gif.jpg}
 # Generate Colorscheme
@@ -131,6 +140,8 @@ exec kitty
 exec --no-startup-id dropbox &
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Cursor
+exec_always --no-startup-id xsetroot -cursor_name left_ptr
 
 
 

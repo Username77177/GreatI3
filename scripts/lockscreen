@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Getting random image from wallpapers folder
+background=$(ls $HOME/.config/i3/wallpapers/ | shuf | head -n 1)
+
+# i3lock will be used for locking a screen
+###
+# Background
+# Radius of the circle and time position
+# Clock Activation
+# Text in cases
+# Color inside the circle and foreground of circle
+# No lines in circle, color if user clear password, primary keys color
+###
+i3lockCommand="i3lock -t -i $HOME/.config/i3/blur.png --radius=100 --ring-width=15 --timepos='x+110:h-70' --datepos='x+43:h-45' --clock --date-align 1 --datestr 'Do you ready to code?' --veriftext='' --wrongtext='' --noinputtext='' --insidecolor=00000000 --ringcolor=E72B57 --bshlcolor=3D4751 --keyhlcolor=4ECDC4 --verifcolor=88FC9F --layout-font=Iosevka --time-font=Iosevka --verif-font=Iosevka --wrong-font=Iosevka --date-font=Iosevka --force-clock --insidevercolor=4ECDC4 --insidewrongcolor=FF6B6B --ringvercolor=4ECDB3 --ringwrongcolor=FF6B6B"
+
+# Set background
+feh --bg-scale $HOME/.config/i3/wallpapers/$background
+
+# Convert Image from jpg to png with blur filter
+convert "$HOME/.config/i3/wallpapers/$background" -blur 0x50 "$HOME/.config/i3/blur.png"
+
+xautolock -time 10 -locker "$i3lockCommand" -corners '+---' -cornerdelay 3 -cornersize 30 &
