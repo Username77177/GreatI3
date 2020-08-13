@@ -109,3 +109,7 @@ rm -rf xwinwrap
 Локскрин включается в течении 3 секунд, если навести мышь в левый верхний угол. Также он включится, если вы не будете взаимодействовать с ПК в течении 10 минут.
 
 ![Background](assets/Background.png)
+
+![Desktop Screenshot](assets/Desktop.png)
+
+![Lockscreen Screenshot](assets/lockscreen.png)
