@@ -1,7 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Check if oh-my-zsh is installed
 if [[ ! -d $HOME/.oh-my-zsh ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  mv .zshrc.pre-oh-my-zsh .zshrc
+  if [[ ! -d /usr/share/fzf ]]; then
+    # Installing FZF on arch, if /usr/share/fzf doesn't exist
+    if [[ $(uname --kernel-release | grep "arch") ]]; then
+      sudo pacman -Sy fzf
+    fi
+  fi
 fi
 
 # Path to your oh-my-zsh installation.
