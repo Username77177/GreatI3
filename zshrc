@@ -6,7 +6,7 @@ if [[ ! -d $HOME/.oh-my-zsh ]]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   mv .zshrc.pre-oh-my-zsh .zshrc
   if [[ ! -d /usr/share/fzf ]]; then
-    # Installing FZF on arch, if /usr/share/fzf doesn't exist
+    # Installing FZF on arch, if fzf doesn't exist
     if [[ $(uname --kernel-release | grep "arch") ]]; then
       sudo pacman -Sy fzf
     fi
