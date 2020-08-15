@@ -1,0 +1,4 @@
+window {
+  font: "Iosevkal 14";
+  width: 1200;
+}

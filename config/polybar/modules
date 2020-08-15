@@ -159,7 +159,7 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 4
 warn-temperature = 60
 
 format = <ramp> <label>

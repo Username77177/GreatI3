@@ -49,7 +49,7 @@ for_window [class=".*"] focus
 ## Keyboard Settings ##
 # Apps
 bindsym $mod+Return exec kitty
-bindsum $mod+Mod1+r exec "kitty ranger"
+bindsum $mod+Mod1+r exec "kitty sh -c 'ranger'"
 bindsym $mod+Mod1+g exec google-chrome-stable
 bindsym $mod+Mod1+c exec code
 bindsym $mod+Mod1+v exec dolphin

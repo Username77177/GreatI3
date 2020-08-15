@@ -23,6 +23,7 @@ GreatI3 - проект, который я сделал просто потому
 sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi okular feh vim code picom kitty ranger git xdotool xautolock i3lock-color scrot imagemagick
 git clone https://github.com/us3rn4me-profile/GreatI3.git
 cd GreatI3
+cp zshrc $HOME/.zshrc
 mkdir -p $HOME/.local/share/fonts/ && \
 cp fonts/* $HOME/.local/share/fonts/ && \
 fc-cache -vf
