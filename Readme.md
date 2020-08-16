@@ -24,14 +24,22 @@ GreatI3 - проект, который я сделал просто потому
 
 Для того, чтобы установить GreatI3 на Arch Linux, вам нужно выполнить следующий скрипт:
 ```bash
-sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi okular feh vim code picom kitty ranger git xdotool xautolock i3lock-color scrot imagemagick
+# Installing Packages
+sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi okular feh vim code picom kitty ranger git xdotool xautolock i3lock-color scrot imagemagick rxvt-unicode urxvt-perls
+# Cloning repository
 git clone https://github.com/us3rn4me-profile/GreatI3.git
+# Changing directory
 cd GreatI3
+# Copying main configs for urxvt and zsh
 cp zshrc $HOME/.zshrc
+cp Xresources $HOME/.Xresources
+# Copying fonts
 mkdir -p $HOME/.local/share/fonts/ && \
 cp fonts/* $HOME/.local/share/fonts/ && \
 fc-cache -vf
+# Copying config for touchpad
 cp ./config/* $HOME/.config/ -r && sudo cp ./40-libinput.conf /usr/share/X11/xorg.conf.d/40-libinput.conf
+# Copying scripts
 cp ./scripts/* $HOME/.config/i3/ -r
 
 # Build Polybar

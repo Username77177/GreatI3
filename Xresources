@@ -1,0 +1,44 @@
+!!! URXVT !!!
+
+! #UI
+
+! Scrollbar
+URxvt.scrollBar: false
+! Padding
+URxvt.internalBorder: 10
+! Font
+URxvt.font: xft:Jetbrains Mono:size=12
+! Letter Spacing
+URxvt.letterSpace: -1
+
+! ##COLORS
+URxvt*background: #292F36
+URxvt*foreground: #fffceb
+
+! normal
+URxvt*color0: #292f36
+URxvt*color1: #ff6b6b
+URxvt*color2: #88fc9f
+URxvt*color3: #ffe66d
+URxvt*color4: #4ecdc4
+URxvt*color5: #e72b57
+URxvt*color6: #ffc857
+URxvt*color7: #edebd7
+
+! bright
+URxvt*color8: #edebd7
+URxvt*color9: #ff6b6b
+URxvt*color10: #88fc9f
+URxvt*color11: #ffe66d
+URxvt*color12: #4ecdc4
+URxvt*color13: #e72b57
+URxvt*color14: #ffc857
+URxvt*color15: #fffceb
+
+! ## Extensions
+URxvt.perl-ext-common: default,matcher,tabbed
+
+! URLs
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg5
