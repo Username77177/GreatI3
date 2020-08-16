@@ -7,7 +7,8 @@ GreatI3 - проект, который я сделал просто потому
 ![Stack Diagram](./assets/GreatI3.png)
 При установке данного софта, скорее всего вся конфигурация у вас будет работать стабильно, однако если это не так, то добро пожаловать на [issues](https://github.com/us3rn4m3-profile/GreatI3/issues)
 
-### Дополнительно
+![](assets/About.png)
+
 *Шрифты*:
 * [Iosevka](https://github.com/be5invis/Iosevka)
 * [FontAwesome](https://fontawesome.com/)
@@ -19,8 +20,8 @@ GreatI3 - проект, который я сделал просто потому
 
 
 ![Color Palette](assets/GreatI3_Colorscheme.png)
+![](assets/Installing.png)
 
-# Установка
 Для того, чтобы установить GreatI3 на Arch Linux, вам нужно выполнить следующий скрипт:
 ```bash
 sudo pacman -Sy --noconfirm i3 i3-gaps base-devel rofi okular feh vim code picom kitty ranger git xdotool xautolock i3lock-color scrot imagemagick
@@ -73,11 +74,14 @@ rm -rf xwinwrap
 ## Потребление RAM
 Я старался сделать данную сборку наиболее минималистичной, так что добавлял только самые нужные и важные программы в автозапуск. Мне удалось добится высокой энергоэффективности и малого потребления RAM.
 ![Ram Usage](assets/ram_usage.png)
-## Горячие клавиши
+
+![](assets/Hotkeys-header.png)
+
 Я пытаюсь сделать GreatI3 удобным для всех, поэтому горячие клавиши работают по определённым правилам
 ![Hotkeys Diagram](assets/Hotkeys.png)
 
-# Элементы интерфейса
+![](assets/Interface.png)
+
 ## Топбар
 Так как в i3 по умолчанию топбар слабенький, то я воспользовался аналогом на Python - [Polybar](https://github.com/polybar/polybar). Его конфигурация лежит в `$HOME/.config/polybar/{config,modules}`. В данном топбаре я попытался сделать всё возможное, чтобы пользователь видел практически всю важную информацию сразу. На панели отображается температура процессора, загрузка RAM и CPU, язык ввода, громкость, батарея, время и виджеты.
 
