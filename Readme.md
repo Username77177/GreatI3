@@ -1,4 +1,9 @@
+
 ![](assets/Header.png)
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Great%20i3-Building-blue" alt="">
+</div>
 
 <p align="center"><strong>GreatI3 - Рабочий стол, который будет делать вашу работу легче</strong></p>
 
